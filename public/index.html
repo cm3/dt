@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<head>
+    <title>dt</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+    #h_animation{position:absolute;margin-top:5px;}
+    #h_hidden{visibility:hidden;}
+    #p, #f{visibility:hidden;display:inline-block;}
+    span.dt{font-weight:bold;}
+    </style>
+</head>
+<body>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1 id="h_animation">d<span id="p">d</span>t<span id="f">t</span></h1>
+        <h1 id="h_hidden">dt</h1>
+        <p><span class="dt">D</span>ual Panels for <span class="dt">T</span>ext Formatting
+        <form class="form-inline">
+          <div class="form-group">
+            <label for="user_id">ID</label>
+            <input type="text" class="form-control" id="user_id" placeholder="test">
+          </div>
+          <button type="submit" class="btn btn-default" id="ok">OK</button>
+        </form>
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>使い方</h2>
+          <p>事前に配布されたユーザIDを入力し「OK」を押すと、あなた専用のテキストエディタが開きます。まずは左のパネルでデータを読み込んでください。そして、それぞれのデータについて、右のパネルを切り替えながら左にＰＤＦの内容をテキスト化してください。詳しい方法は右パネルの Help を参考に。</p>
+        </div>
+      </div>
+    </div> <!-- /container -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#ok").click(function () {
+      location.href="./user/"+$("#user_id").val()+"/";
+      return false;
+    });
+    $("#p").css({visibility:"visible","margin-left":"-"+String($("#p").width())+"px"});
+    $("#f").css({visibility:"visible","margin-left":"-"+String($("#f").width())+"px"});
+    var timer = setInterval(function(){
+        $("#p").animate({zIndex:1},{
+            duration:1000,
+            step:function(now){
+                $(this).css({
+                    "margin-left":"-"+String($("#p").width()*(1-Number(now)))+"px",
+                    "vertical-align":"-"+String(0.2*Number(now))+"em",
+                    color:"#999999",
+                    transform:'rotate('+String(180*Number(now))+'deg'
+                });
+            }
+        });
+        $("#f").animate({zIndex:1},{
+            duration:1000,
+            step:function(now){
+                $(this).css({
+                    "margin-left":"-"+String($("#f").width()*(1-Number(now)))+"px",
+                    "vertical-align":String(0.2*Number(now))+"em",
+                    color:"#999999",
+                    transform:'rotateX('+String(Number(now)*180)+'deg'
+                });
+            }
+        });
+        clearInterval(timer);
+    },1000);
+});
+</script>
+</body>
+</html>

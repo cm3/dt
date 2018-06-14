@@ -1,0 +1,17 @@
+{
+  "name": "dt",
+  "version": "0.1.0",
+  "description": "Dual Panels for Text Formatting",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "*",
+    "fs": "0.0.2",
+    "glob": "*",
+    "qs": "^5.2.0"
+  },
+  "author": "KAMEDA Akihiro",
+  "license": "Apache-2.0"
+}

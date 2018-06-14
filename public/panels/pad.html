@@ -1,0 +1,44 @@
+<style>
+#pad-nav{
+ border-left: 3px solid black;
+}
+#pad{
+    font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+
+    border: none;
+    overflow: auto;
+    outline: none;
+    resize: none;
+    width:100%;
+
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding:15px;
+    line-height: 21px;
+}
+.scrollable-menu {
+    height: auto;
+    max-height: 500px;
+    overflow-x: hidden;
+}
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="pad-nav">
+    <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="#">Editor</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-folder-open"></span> Open <span class="caret"></span></a>
+                    <ul class="dropdown-menu scrollable-menu" id="idlist">
+                        <!-- id list inserted by script -->
+                    </ul>
+                </li>
+                <li><a href="#" id="save_txt"><span class="glyphicon glyphicon-floppy-disk"></span> Save</a></li>
+                <li><a href="#" id="pad_auto"><span class="glyphicon glyphicon-flash"></span> Auto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<textarea class="panel-body" id="pad" onScroll="scroll()"></textarea>

@@ -1,0 +1,31 @@
+/* public/style.css */
+
+html, body, .full-height{
+    height: 100%;
+	overflow:hidden;
+}
+
+#left, #right{
+	padding:50px 0px 0px 0px;
+	width:50%;
+}
+
+#right{
+    border-left: 1px solid black;
+}
+
+.navbar{
+	width:50%;
+}
+
+.panel-body{
+ overflow: auto;
+ height: 100%;
+ width: 100%;
+ padding: 15px;
+}
+
+p img{
+ max-width:90%;
+ margin:5%;
+}

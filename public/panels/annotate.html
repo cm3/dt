@@ -1,0 +1,50 @@
+<style>
+#annotate-nav{
+ border-left: 3px solid yellow;
+}
+#annotate{
+    border: none;
+    outline: none;
+    resize: none;
+	width:100%;
+
+	/* padding:15px; */
+  padding:4px 10px;
+  overflow: hidden;
+  font-size: inherit;
+	line-height: 21px;
+}
+#annotate-raw-data{
+	display:none;
+}
+.ann-input{
+	font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+	display:inline-block;
+	border:none;
+	/*height:1.3em;*/
+	width:100%;
+	padding:0px;
+  vertical-align:top;
+  overflow-y: auto;
+}
+</style>
+
+<nav class="navbar navbar-default navbar-fixed-top" id="annotate-nav">
+  		<div class="container-fluid">
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      			<ul class="nav navbar-nav">
+        		<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Annotate <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="javascript:pdf('right');">PDF</a></li>
+            <li><a href="javascript:markdown('right');">Preview</a></li>
+			<li><a href="javascript:help('right');">Help</a></li>
+          </ul>
+        </li>
+		<li><a href="#" id="save_ann"><span class="glyphicon glyphicon-floppy-disk"></span>Save</a></li>
+    <li><a href="#" id="refresh_ann"><span class="glyphicon glyphicon-refresh"></span>Refresh</a></li>
+      </ul>
+		</div>
+		</nav>
+<div class="panel-body" id="annotate"></div>
+<textarea id="annotate-raw-data"></textarea>
